@@ -8,11 +8,11 @@ Simple unique id generator. Suitable for creating temporary links or identifiers
 > 
 > juid(10) - will return id string with a length of **10** characters.
 >
-> juidRange(16, 24) - will return id string with a length of range from **16** to **24** characters.
+> juid(16, 24) - will return id string with a length of range from **16** to **24** characters.
 
 ```js
 import { juid } from "just-unique-id";
 const id = juid(); // => "XOIS46ZlI7U4pyMjvXJ4oa3Q"
 const id = juid(10); // => "dYlktRzdQj"
-const id = juidRange(16, 24); // => "rrPCxsQMvYYVzptZT3www"
+const id = juid(16, 24); // => "rrPCxsQMvYYVzptZT3www"
 ```

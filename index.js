@@ -7,21 +7,20 @@ const { random } = require("./lib/utils/random");
 const MAX_LENGTH = 24;
 const symbols = `${alphabetUpper}${alphabetLower}${numbers}`;
 
-exports.juid = (maxLength = MAX_LENGTH) => {
+exports.juid = (maxLength = MAX_LENGTH, minLength) => {
+  return generate(minLength, maxLength);
+};
+
+const generate = (minLength, maxLength) => {
+  const length = getLength(minLength, maxLength);
   let id = "";
-  for (let i = 0; i < maxLength; i++) {
+  for (let i = 0; i < length; i++) {
     const randSymbs = symbols[random(0, symbols.length - 1)];
     id += randSymbs[random(0, randSymbs.length - 1)];
   }
   return id;
 };
 
-exports.juidRange = (minLength, maxLength) => {
-  let length;
-  if (minLength > maxLength) {
-    length = random(maxLength, minLength);
-  } else {
-    length = random(minLength, maxLength);
-  }
-  return this.juid(length);
+const getLength = (minLength, maxLength) => {
+  return minLength ? random(minLength, maxLength) : maxLength;
 };
