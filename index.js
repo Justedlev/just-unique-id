@@ -15,3 +15,13 @@ exports.juid = (maxLength = MAX_LENGTH) => {
   }
   return id;
 };
+
+exports.juidRange = (minLength, maxLength) => {
+  let length;
+  if (minLength > maxLength) {
+    length = random(maxLength, minLength);
+  } else {
+    length = random(minLength, maxLength);
+  }
+  return this.juid(length);
+};
