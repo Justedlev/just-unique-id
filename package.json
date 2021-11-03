@@ -1,0 +1,30 @@
+{
+  "name": "just-unique-id",
+  "description": "Simple unique id generator",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Justedlev/just-unique-id.git"
+  },
+  "author": "justedlev",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.test.js"
+  },
+  "keywords": [
+    "id",
+    "juid",
+    "just-uid",
+    "unique-id",
+    "just-unique-id"
+  ],
+  "bugs": {
+    "url": "https://github.com/Justedlev/just-unique-id/issues"
+  },
+  "homepage": "https://github.com/Justedlev/just-unique-id#readme"
+}
