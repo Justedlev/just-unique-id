@@ -7,7 +7,7 @@ const { random } = require("./lib/utils/random");
 const MAX_LENGTH = 24;
 const symbols = `${alphabetUpper}${alphabetLower}${numbers}`;
 
-exports.juid = (maxLength = MAX_LENGTH, minLength) => {
+exports.juid = (minLength = MAX_LENGTH, maxLength) => {
   return generate(minLength, maxLength);
 };
 
@@ -22,5 +22,9 @@ const generate = (minLength, maxLength) => {
 };
 
 const getLength = (minLength, maxLength) => {
-  return minLength ? random(minLength, maxLength) : maxLength;
+  return maxLength
+    ? minLength > maxLength
+      ? random(maxLength, minLength)
+      : random(minLength, maxLength)
+    : minLength;
 };
