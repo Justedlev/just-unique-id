@@ -4,19 +4,19 @@ Simple unique id generator. Suitable for creating temporary links or identifiers
 
 ### Functions:
 
-> juid() - will return id string with a length of **24** characters.
+> _**juid()**_ - will return id string with a length of **24** characters.
 > 
-> juid(10) - will return id string with a length of **10** characters.
+> _**juid(10)**_ - will return id string with a length of **10** characters.
 >
-> juid(16, 24) - will return id string with a length of range from **16** to **24** characters.
+> _**juid(16, 24)**_ - will return id string with a length of range from **16** to **24** characters.
 >
-> juidFromSymbols() or juidFromSymbols("") - will throw error: "The field 'symbols' cannot be empty or undefined".
+> _**juidFromSymbols()**_ or _**juidFromSymbols("")**_ - will throw error: "The field 'symbols' cannot be empty or undefined".
 >
-> juidFromSymbols("justedlev") - will return id string with a length of **24** characters from the string "justedlev".
+> _**juidFromSymbols("justedlev")**_ - will return id string with a length of **24** characters from the string "justedlev".
 >
-> juidFromSymbols("justedlev", 10) - will return id string with a length of **10** characters from the string "justedlev".
+> _**juidFromSymbols("justedlev", 10)**_ - will return id string with a length of **10** characters from the string "justedlev".
 >
-> juidFromSymbols("justedlev", 10, 5) - will return id string with a length range from **5** to **10** characters from the string "justedlev".
+> _**juidFromSymbols("justedlev", 10, 5)**_ - will return id string with a length range from **5** to **10** characters from the string "justedlev".
 
 ```js
 import { juid } from "just-unique-id";
