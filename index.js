@@ -10,7 +10,7 @@ const {
   alphabetUpperKeyboardInverted,
 } = require("./lib/alphabet");
 const { numbersSorted, numbersInvert } = require("./lib/numbers");
-const { random } = require("./lib/utils/random");
+const { jrand } = require("just-random-number");
 
 const MAX_LENGTH = 24;
 const symbolsList = [
@@ -37,8 +37,8 @@ function generate(minLength, maxLength, symbols) {
   const length = getLength(minLength, maxLength);
   let id = "";
   for (let i = 0; i < length; i++) {
-    const randSymbs = symbols[random(0, symbols.length - 1)];
-    id += randSymbs[random(0, randSymbs.length - 1)];
+    const randSymbs = symbols[jrand(0, symbols.length - 1)];
+    id += randSymbs[jrand(0, randSymbs.length - 1)];
   }
   return id;
 }
@@ -57,7 +57,7 @@ function getLength(minLength, maxLength) {
     if (maxLength < 1) {
       return minLength;
     }
-    return minLength < maxLength ? random(minLength, maxLength) : random(maxLength, minLength);
+    return minLength < maxLength ? jrand(minLength, maxLength) : jrand(maxLength, minLength);
   } else {
     return minLength;
   }

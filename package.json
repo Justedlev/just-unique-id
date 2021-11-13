@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Justedlev/just-unique-id/issues"
   },
-  "homepage": "https://github.com/Justedlev/just-unique-id#readme"
+  "homepage": "https://github.com/Justedlev/just-unique-id#readme",
+  "dependencies": {
+    "just-random-number": "^1.0.0"
+  }
 }
