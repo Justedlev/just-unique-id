@@ -22,14 +22,14 @@ const symbolsList = [
   numbersInvert,
 ];
 
-exports.juidFromSymbols = (symbols, minLength = MAX_LENGTH, maxLength) => {
+exports.juidFromSymbols = (symbols, minLength, maxLength = MAX_LENGTH) => {
   if(typeof symbols === "undefined" || symbols === "") {
     throw new Error("The field 'symbols' cannot be empty or undefined");
   }
   return generate(minLength, maxLength, symbols);
 };
 
-exports.juid = (minLength = MAX_LENGTH, maxLength) => {
+exports.juid = (minLength, maxLength = MAX_LENGTH) => {
   return generate(minLength, maxLength, symbolsList);
 };
 
@@ -44,21 +44,21 @@ function generate(minLength, maxLength, symbols) {
 }
 
 function getLength(minLength, maxLength) {
-  if (maxLength) {
+  if (minLength) {
     if (minLength < 1 && maxLength < 1) {
-      return minLength;
+      return jrand(1, 25);
     }
     if (minLength === maxLength) {
-      return minLength;
-    }
-    if (minLength < 1) {
       return maxLength;
+    }
+    if (maxLength < 1) {
+      return minLength;
     }
     if (maxLength < 1) {
       return minLength;
     }
     return minLength < maxLength ? jrand(minLength, maxLength) : jrand(maxLength, minLength);
   } else {
-    return minLength;
+    return maxLength;
   }
 }
